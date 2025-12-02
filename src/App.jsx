@@ -6,31 +6,200 @@ const AdventCalendar = () => {
   const [selectedDay, setSelectedDay] = useState(null);
 
   const dayContent = [
-    { title: "Planilla de Gratitud", description: "Comienza el mes escribiendo 5 cosas por las que estás agradecida hoy. Esta práctica diaria te ayudará a mantener una actitud positiva durante todo diciembre. Comienza el mes escribiendo 5 cosas por las que estás agradecida hoy. Esta práctica diaria te ayudará a mantener una actitud positiva durante todo diciembre.", buttonText: "Descargar Planilla", buttonAction: "link", buttonLink: "https://mpago.li/1U68nE9", viewDate: "2025-11-01" },
-    { title: "Lista de Deseos", description: "Crea tu lista de deseos para el próximo año. Incluye metas personales, profesionales y sueños que quieres cumplir. ¡Visualiza tu futuro!", buttonText: "Descargar Lista", buttonAction: "link", buttonLink: "https://mpago.li/1U68nE9", viewDate: "2025-11-02" },
-    { title: "Recetas Navideñas", description: "Descarga esta colección de recetas navideñas especiales. Incluye galletas, postres y bebidas calientes para compartir en familia.", buttonText: "Ver Recetas", buttonAction: "link", buttonLink: "https://mpago.li/1U68nE9", viewDate: "2025-11-03" },
-    { title: "Playlist Navideña", description: "Tu guía para crear la playlist perfecta. Incluye sugerencias de canciones clásicas y modernas para ambientar tu hogar.", buttonText: "Escuchar Playlist", buttonAction: "link", buttonLink: "https://mpago.li/1U68nE9", viewDate: "2025-11-04" },
-    { title: "Planificador Semanal", description: "Organiza tu semana con este planificador especial de diciembre. Incluye espacio para tareas, eventos y momentos de autocuidado.", buttonText: "Descargar", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-05" },
-    { title: "Tarjetas Navideñas", description: "Plantillas imprimibles de tarjetas navideñas para personalizar y enviar a tus seres queridos. Diseños únicos y con mucho amor.", buttonText: "Descargar Plantillas", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-06" },
-    { title: "Diario de Adviento", description: "Reflexiona cada día con prompts especiales. Este diario te guiará a través de pensamientos positivos y momentos de introspección.", buttonText: "Comprar Diario", buttonAction: "buy", buttonLink: "#", viewDate: "2025-12-07" },
-    { title: "Lista de Películas", description: "50 películas navideñas que no puedes perderte este diciembre. Desde clásicos hasta estrenos recientes para maratonear.", buttonText: "Ver Lista", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-08" },
-    { title: "Rutina de Autocuidado", description: "Plan de autocuidado para diciembre. Incluye rutinas de skincare, meditación y momentos para ti en medio del ajetreo navideño.", buttonText: "Descargar Guía", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-09" },
-    { title: "Checklist de Regalos", description: "Organiza tus compras navideñas con esta checklist. Incluye presupuesto, ideas de regalos y seguimiento de compras.", buttonText: "Descargar", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-10" },
-    { title: "Decoración DIY", description: "Guía paso a paso para crear tus propias decoraciones navideñas. Proyectos fáciles y económicos para embellecer tu hogar.", buttonText: "Ver Tutorial", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-11" },
-    { title: "Calendario de Eventos", description: "Planifica todos tus eventos de diciembre: cenas, reuniones, fiestas. No te pierdas ninguna celebración importante.", buttonText: "Descargar Calendario", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-12" },
-    { title: "Guía de Outfits", description: "Ideas de outfits para cada ocasión navideña. Desde looks casuales hasta elegantes para tus eventos especiales.", buttonText: "Ver Guía", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-13" },
-    { title: "Lista de Propósitos", description: "Plantilla para escribir tus propósitos de año nuevo de manera efectiva. Incluye método SMART para lograr tus metas.", buttonText: "Descargar Plantilla", buttonAction: "#", buttonLink: "#", viewDate: "2025-12-14" },
-    { title: "Presupuesto Navideño", description: "Administra tus gastos de diciembre con esta plantilla. Controla regalos, comidas y celebraciones sin estrés financiero.", buttonText: "Descargar Excel", buttonAction: "#", buttonLink: "#", viewDate: "2025-12-15" },
-    { title: "Recetario de Postres", description: "Deliciosos postres navideños para sorprender a tu familia. Recetas fáciles con ingredientes accesibles.", buttonText: "Comprar Recetario", buttonAction: "buy", buttonLink: "#", viewDate: "2025-12-16" },
-    { title: "Planificador de Menú", description: "Organiza tus comidas navideñas con este planificador. Incluye lista de compras y tiempos de preparación.", buttonText: "Descargar", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-17" },
-    { title: "Actividades en Familia", description: "50 actividades divertidas para hacer en familia durante diciembre. Crea recuerdos inolvidables con tus seres queridos.", buttonText: "Ver Actividades", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-18" },
-    { title: "Guía de Regalos Creativos", description: "Ideas de regalos hechos a mano y personalizados. Sorprende con detalles únicos que salen del corazón.", buttonText: "Descargar Guía", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-19" },
-    { title: "Tracker de Hábitos", description: "Mantén tus buenos hábitos durante las fiestas. Plantilla para dar seguimiento a ejercicio, agua, sueño y más.", buttonText: "Descargar Tracker", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-20" },
-    { title: "Playlist de Meditación", description: "Música relajante para meditar en medio del ajetreo navideño. Encuentra tu paz interior cada día.", buttonText: "Escuchar", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-21" },
-    { title: "Juegos Navideños", description: "Colección de juegos divertidos para tus reuniones. Incluye juegos de mesa, dinámicas grupales y más.", buttonText: "Comprar Pack", buttonAction: "buy", buttonLink: "#", viewDate: "2025-12-22" },
-    { title: "Guía de Wrapping", description: "Aprende técnicas creativas para envolver regalos. Tutoriales paso a paso para presentaciones espectaculares.", buttonText: "Ver Tutorial", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-23" },
-    { title: "Nochebuena Perfecta", description: "Planifica tu cena de Nochebuena sin estrés. Incluye menú sugerido, timeline de preparación y decoración de mesa.", buttonText: "Descargar Guía", buttonAction: "link", buttonLink: "#", viewDate: "2025-12-24" }
-  ];
+  { 
+    title: "Hoy comienzo a cuidarme",
+    description: "Date un momento consciente: siéntate, respira, siente tu cuerpo sin juzgar. Recuerda que mereces cuidado y atención. Hoy inicia tu viaje de autocuidado con intención.",
+    buttonText: "Ver recurso",
+    buttonAction: "link",
+    buttonLink: "https://open.spotify.com/episode/0SFCyliu8wnsDbrn7r2lF3",
+    viewDate: "2025-12-01"
+  },
+  { 
+    title: "Reconociendo lo bueno en mí",
+    description: "Haz una lista de 5 cosas que te gustan de ti. Escríbelas en tu libreta o celular y léelas cada vez que dudes de ti.",
+    buttonText: "Ver recurso",
+    buttonAction: "link",
+    buttonLink: "https://www.canva.com/design/DAG6Yz1zu_0/5c_NiL8GpRBBlONQlwHeQw/view",
+    viewDate: "2025-12-02"
+  },
+  { 
+    title: "¿Quién soy cuando me siento auténtica?",
+    description: "Reflexiona: ¿en qué momentos del día te sientes más tú? ¿Con quién, haciendo qué? Estos instantes te conectan con tu esencia.",
+    buttonText: "Ver recurso",
+    buttonAction: "link",
+    buttonLink: "https://pin.it/4tVf29p4z",
+    viewDate: "2025-12-03"
+  },
+  { 
+    title: "Respira para reencontrarte",
+    description: "Dedica 10 minutos a una respiración consciente: inhala 4 seg, retén 4, exhala 6. Observa tu cuerpo sin prisa. Permítete volver a ti.",
+    buttonText: "Ver recurso",
+    buttonAction: "link",
+    buttonLink: "https://open.spotify.com/playlist/37i9dQZF1DX6QClArDhvcW",
+    viewDate: "2025-12-04"
+  },
+  { 
+    title: "Acepto mi imperfección",
+    description: "La perfección no es la meta. Acepta tus imperfecciones como parte de tu historia y belleza. Suelta los estándares externos.",
+    buttonText: "Ver recurso",
+    buttonAction: "link",
+    buttonLink: "https://open.spotify.com/episode/0oFGkHHbPU9r4XqjBLNRTq",
+    viewDate: "2025-12-05"
+  },
+  { 
+    title: "Cuestiona tus pensamientos negativos",
+    description: "Cuando aparezca una voz negativa pregúntate: ¿esto es verdad siempre? Cuestionar tus pensamientos transforma tu diálogo interno.",
+    buttonText: "Ver recurso",
+    buttonAction: "link",
+    buttonLink: "https://open.spotify.com/episode/1yaw5TPJ5VcqY5Hjz5CEIx",
+    viewDate: "2025-12-06"
+  },
+  { 
+    title: "Despido lo que ya no me sirve",
+    description: "Escribe qué hábitos, creencias o culpas quieres soltar antes de fin de año. Realiza un pequeño rito simbólico para liberarte.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-07"
+  },
+  { 
+    title: "Hoy me doy un regalo",
+    description: "Haz algo que te guste solo para ti: música, un baño relajante, dibujar o caminar al aire libre.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-08"
+  },
+  { 
+    title: "Mi valor no depende de otros",
+    description: "Tu valor no depende de la aprobación ajena. Eres valiosa por quien eres, no por lo que otros digan.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-09"
+  },
+  { 
+    title: "Poner límites — cuidar mi paz",
+    description: "Identifica algo que te quite energía y pon un límite saludable. Decir «no» también es autocuidado.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-10"
+  },
+  { 
+    title: "Energías que nutren / las que agotan",
+    description: "Haz una lista de actividades/personas que te dan energía y otra de lo que te drena. Aprende a elegir con intención.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-11"
+  },
+  { 
+    title: "Carta de gratitud a mi ser pasado",
+    description: "Escribe una carta a tu yo del pasado agradeciendo su esfuerzo, valentía y resiliencia. Reconoce cuánto has crecido.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-12"
+  },
+  { 
+    title: "Crecer sin compararme",
+    description: "En lugar de compararte, define qué significa para ti crecer. Crea tus propios estándares.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-13"
+  },
+  { 
+    title: "Práctica de gratitud diaria",
+    description: "Agradece 3 cosas del día, por más simples que sean. La gratitud cultiva una mente amorosa.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-14"
+  },
+  { 
+    title: "Decisiones que honran mi bienestar",
+    description: "Piensa: ¿qué decisión simple podría mejorar hoy tu bienestar? Las pequeñas decisiones construyen tu paz.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-15"
+  },
+  { 
+    title: "Desconecta para reconectar",
+    description: "Apaga redes o el celular una hora antes de dormir. Observa cómo tu mente se calma y tu descanso mejora.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-16"
+  },
+  { 
+    title: "Soy suficiente tal como soy",
+    description: "Afirmación del día: “Soy suficiente tal como soy”. Repítelo y siéntelo en tu cuerpo.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-17"
+  },
+  { 
+    title: "Sé tu propia amiga",
+    description: "Cuando aparezca la inseguridad, trátate como tratarías a tu mejor amiga: con cariño y comprensión.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-18"
+  },
+  { 
+    title: "¿Qué significa amor propio para mí?",
+    description: "Escribe tu propia definición de amor propio. Tener claridad te ayuda a tomar decisiones alineadas contigo.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-19"
+  },
+  { 
+    title: "Crea sin juzgar",
+    description: "Escribe, dibuja, canta o baila sin juzgarte. La creatividad sana y te conecta contigo.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-20"
+  },
+  { 
+    title: "Mi bienestar también importa",
+    description: "Cuidar de ti no es egoísmo. Tu bienestar es prioridad y fuente de amor.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-21"
+  },
+  { 
+    title: "Celebra tus logros del año",
+    description: "Haz un repaso del año: ¿qué lograste? Celebra cada paso, por pequeño que sea.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-22"
+  },
+  { 
+    title: "Lecciones que me regaló el año",
+    description: "Reflexiona: ¿qué aprendiste de ti este año? Escribe esas lecciones para guiarti en tu crecimiento.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-23"
+  },
+  { 
+    title: "Mi intención para el nuevo año",
+    description: "Elige un valor o hábito que quieras cultivar el próximo año: amor propio, calma, gratitud o valentía.",
+    buttonText: "Sin recurso",
+    buttonAction: "none",
+    buttonLink: "",
+    viewDate: "2025-12-24"
+  }
+];
+
 
   const dayIcons = [
     '🎅', '🍬', '🎀', '☕', '🎄', '🥛', '✉️', '🌿', '🕯️', '🎄',
@@ -99,6 +268,14 @@ const AdventCalendar = () => {
 
     const dayData = dayContent[day - 1];
     if (dayData && dayData.viewDate) {
+      // Parse YYYY-MM-DD into a local date to avoid UTC parsing issues
+      const parts = dayData.viewDate.split('-').map(Number);
+      if (parts.length === 3) {
+        const [y, m, d] = parts;
+        const viewDate = new Date(y, m - 1, d); // local midnight
+        return today >= viewDate;
+      }
+      // fallback to Date constructor if parsing fails
       const viewDate = new Date(dayData.viewDate);
       viewDate.setHours(0,0,0,0);
       return today >= viewDate;
